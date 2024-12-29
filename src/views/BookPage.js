@@ -4,6 +4,7 @@ import { books } from '../data/data'; // Asegúrate de importar tus datos o usar
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import useAddtoCart from "../hooks/useAddtoCart";
 
 function BookPage({ setCart }) {
   const { id } = useParams(); // Obtener el ID del libro desde la URL
@@ -15,10 +16,6 @@ function BookPage({ setCart }) {
     setBook(selectedBook);
   }, [id]); // Solo volver a ejecutar si cambia el ID del libro
 
-  // Agregar al carrito
-  const addToCart = (book) => {
-    setCart((prevCart) => [...prevCart, book]);
-  };
 
   if (!book) {
     return <div>Cargando...</div>; // Mientras se cargan los detalles del libro
@@ -36,7 +33,7 @@ function BookPage({ setCart }) {
           <p><strong>Precio: ${book.price.toFixed(2)}</strong></p>
           <div>
   
-            <button onClick={() => addToCart(book)}>Añadir al carrito</button>
+            <button onClick={() => useAddtoCart(book,setCart)}>Añadir al carrito</button>
           </div>
           <br/>
                   <Link to={`/home`}>

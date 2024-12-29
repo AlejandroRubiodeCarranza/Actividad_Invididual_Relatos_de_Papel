@@ -1,25 +1,52 @@
 
-/* Estilos para las páginas principales */
+/* Estilo para la página de inicio (Landing) */
 .landing {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  text-align: center;
-  background-color: #008cba;
-  color: white;
-  padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 .landing h1 {
-  font-size: 3rem;
-  margin-bottom: 20px;
+    position: relative;
+    text-align: center;
 }
 
-.landing p {
-  font-size: 1.2rem;
+/* Estilo para el puntero láser */
+.laser-pointer, .laser-pointer-reverse {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    animation: rotateAround 2s linear infinite;
 }
+
+.laser-pointer-reverse {
+    animation: rotateAroundReverse 2s linear infinite;
+}
+
+/* Animación para girar alrededor del título */
+@keyframes rotateAround {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg) translateX(300px);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg) translateX(300px);
+    }
+}
+
+@keyframes rotateAroundReverse {
+    0% {
+        transform: translate(-50%, -50%) rotate(360deg) translateX(300px);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(0deg) translateX(300px);
+    }
+}
+
 
 .home_container{
   width: 80%;

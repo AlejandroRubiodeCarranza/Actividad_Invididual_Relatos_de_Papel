@@ -1,12 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-import Option_Menu from '../components/Option_Menu';
 import useAddtoCart from "../hooks/useAddtoCart";
 import { books } from '../data/data'; // Importar los libros desde data.js
 
-function Home({ setCart }) {
+function Home_list({ setCart }) {
 
     const [searchQuery, setSearchQuery] = useState(''); // Estado para la barra de búsqueda
     const [filteredBooks, setFilteredBooks] = useState(books); // Estado para los libros filtrados
@@ -26,10 +23,6 @@ function Home({ setCart }) {
 
   return (
     <div>
-
-    <Header/>
-
-    <Option_Menu/>
 
     <div className="home_container">
       {/* Barra de búsqueda */}
@@ -61,11 +54,9 @@ function Home({ setCart }) {
         )}
       </div>
     </div>
-
-    <Footer/>
-
+    
     </div>
   );
 }
 
-export default Home;
+export default Home_list;

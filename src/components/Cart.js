@@ -1,10 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import useRemoveFromCart from "../hooks/useRemoveFromCart";
 
 function Cart({ cart, setCart }) {
-  const removeFromCart = (bookId) => {
-    setCart(cart.filter(book => book.id !== bookId));
-  };
 
   return (
     <div className="cart">
@@ -13,7 +11,7 @@ function Cart({ cart, setCart }) {
         {cart.map(book => (
           <li key={book.id}>
             {book.title} - ${book.price}
-            <button onClick={() => removeFromCart(book.id)}>Eliminar</button>
+            <button onClick={() => useRemoveFromCart(book.id,cart,setCart)}>Eliminar</button>
           </li>
         ))}
       </ul>

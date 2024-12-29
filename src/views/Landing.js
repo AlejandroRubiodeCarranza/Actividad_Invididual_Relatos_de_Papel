@@ -4,7 +4,7 @@
 
     function Landing() {
 
-        useRedirection("/home", 5000); // Redireccionamos a la vista de restaurantes en 3 segundos
+        useRedirection("/home", 5000); // Redireccionamos a la vista de restaurantes en 5 segundos
 
         return (
             <div className="landing">

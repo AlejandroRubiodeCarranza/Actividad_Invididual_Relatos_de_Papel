@@ -2,23 +2,21 @@ import React from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { Link } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
-
+import { useNavigate } from 'react-router-dom'; 
+import useClearCart from "../hooks/useClearCart";
 
 function CheckoutPage({ cart, setCart }) {
+
   
   const navigate = useNavigate();
-
-  const clearCart = () => {
-    setCart([]);
-  };
-  const total = cart.reduce((acc, book) => acc + book.price, 0);
 
   const handleCheckout = () => {
     alert('Pedido realizado con éxito');
     setCart([]);
     navigate('/');
   };
+
+  const total = cart.reduce((acc, book) => acc + book.price, 0);
 
   return (
     <div>
@@ -35,9 +33,7 @@ function CheckoutPage({ cart, setCart }) {
     </div>
       <button onClick={handleCheckout}>Pagar</button>
       
-      <button onClick={clearCart}>Vaciar Carro</button>
-
-
+      <button onClick={() => useClearCart(setCart)}>Vaciar Carro</button>
 
       <Link to={`/home`}>
         <button>Seguir Comprando</button>
