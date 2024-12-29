@@ -1,0 +1,93 @@
+
+/* Estilos para las páginas principales */
+.landing {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  background-color: #008cba;
+  color: white;
+  padding: 20px;
+}
+
+.landing h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.landing p {
+  font-size: 1.2rem;
+}
+
+.home_container{
+  width: 80%;
+}
+
+/* Estilos para la vista del libro */
+.book-page {
+  margin-top: 30px;
+  text-align: center;
+  width: 80%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.book-page h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.book-page p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.book-page button {
+  background-color: #28a745;
+}
+
+/* Estilos para la vista de About_us */
+
+.About_us{
+  background-color: #fff;
+  padding: 20px;
+  width: 80%;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para la vista de checkout */
+.checkout-page {
+  background-color: #fff;
+  padding: 20px;
+  width: 80%;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.checkout-page ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.checkout-page li {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.checkout-page h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.checkout-page p {
+  font-size: 1.2rem;
+}
+
+.checkout-page button {
+  background-color: #008cba;
+  width: 100%;
+  margin-top: 20px;
+}
